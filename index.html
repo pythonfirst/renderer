@@ -5,12 +5,37 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>renderer</title>
+  <link rel="stylesheet" href="./index.css">
 </head>
 <body>
   <div id="app"></div>
-  <!-- <script type="module" src="./src/runtime-dom/index.js"></script> -->
   <script type="module">
     import { h } from './h.js';
+    import { render } from './render.js';
+
+    const container = document.getElementById('app')
+
+
+    const vnode = h('div', {
+      style: {
+        width: '200px',
+        height: '200px',
+        backgroundColor: '#34bf49'
+      },
+      class: 'animation'
+      
+    },
+    h('p', {style: { width: '100px', height: '100px', backgroundColor: '#00a98f'}}, 'hello world'))
+
+    // const vnode = h('input', {
+    //   type: 'checkbox',
+    //   checked: true,
+    //   class: 'cls-a',
+    //   disabled: false,
+    // })
+
+
+    render(vnode, container)
   </script>
 
 </body>

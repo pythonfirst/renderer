@@ -1,0 +1,1 @@
+export const SpecialAttributes = ['value', 'disabled', 'checked', 'muted', 'setected']

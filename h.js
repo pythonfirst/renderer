@@ -1,17 +1,17 @@
 import { ShapeFlags } from "./shared/shapeFlags.js";
 import { ChildrenFlags } from "./shared/childrenFlags.js";
 /**
- * 
- * @param {*} type 
- * @param {*} props 
- * @param {*} children 
+ * 创建VNode
+ * @param {*} type VNode类型
+ * @param {*} props VNode属性
+ * @param {*} children 子节点
  */
 export function h(type, props=null, children=null) {
 
-  let shapeFlags = null; // 初始化shapeFlags
+  let shapeFlag = null; // 初始化shapeFlag
   // 通过type的类型判断是否为普通元素vnode
   if (typeof type === 'string') {
-    shapeFlags = ShapeFlags.ELEMENT
+    shapeFlag = ShapeFlags.ELEMENT
   } else {
     console.warn('暂不支持其他类型vnode')
   }
@@ -48,7 +48,7 @@ export function h(type, props=null, children=null) {
     _isVNode: true,
     type,
     props,
-    shapeFlags,
+    shapeFlag,
     childFlag,
     children,
   }
@@ -73,7 +73,7 @@ export function createTextVNode(text) {
   return {
     _isVNode: true,
     // flags 是 VNodeFlags.TEXT
-    shapeflags: ShapeFlags.TEXT_CHILDREN,
+    shapeFlag: ShapeFlags.TEXT_CHILDREN,
     type: null,
     props: null,
     // 纯文本类型的 VNode，其 children 属性存储的是与之相符的文本内容
