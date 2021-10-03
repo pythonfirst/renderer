@@ -25,17 +25,34 @@
       class: 'animation'
       
     },
-    h('p', {style: { width: '100px', height: '100px', backgroundColor: '#00a98f'}}, 'hello world'))
+    h('p', {style: { width: '100px', height: '100px', backgroundColor: '#00a98f'}}, 'hello world')
+    )
 
-    // const vnode = h('input', {
-    //   type: 'checkbox',
-    //   checked: true,
-    //   class: 'cls-a',
-    //   disabled: false,
-    // })
+    const vnode1 = h('input', {
+      type: 'checkbox',
+      checked: true,
+      class: 'cls-a',
+      disabled: false,
+    })
+
+    const vnode2 = h('div', {
+      style: {
+        width: '200px',
+        height: '200px',
+        backgroundColor: '#6a737b'
+      },
+      class: 'animation'
+    },
+    h('p', {style: { width: '100px', height: '100px', backgroundColor: '#00a98f'}}, 'hello world1')
+    )
 
 
-    render(vnode, container)
+    render(vnode, container);
+    
+    setTimeout(() => {
+      render(vnode2, container)
+    }, 3000);
+
   </script>
 
 </body>
