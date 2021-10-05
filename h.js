@@ -59,7 +59,7 @@ function normalizeVNodes(children) {
   // 遍历 children
   for (let i = 0; i < children.length; i++) {
     const child = children[i]
-    if (child.key == null) {
+    if (!child.props?.key) {
       // 如果原来的 VNode 没有key，则使用竖线(|)与该VNode在数组中的索引拼接而成的字符串作为key
       child.key = '|' + i
     }
@@ -82,18 +82,3 @@ export function createTextVNode(text) {
     childFlags: ChildrenFlags.NO_CHILDREN
   }
 }
-
-console.log(h(
-  'div', 
-  {
-    style: {
-      width: '100px',
-      height: '50px',
-    },
-    class: 'container',
-  },
-  [
-    h('h1', null, '我是标题1'),
-    h('h2', null, '我是标题2')
-  ]
-  ))

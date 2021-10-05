@@ -12,3 +12,21 @@
 .animation {
   border-radius: 4px;
 }
+
+ul {
+  display: flex;
+  width: 50%;
+}
+
+ul li{
+  background-color: #c1d82f;
+  width: 100px;
+  height: 100px;
+  margin:2px;
+  padding: 0;
+  list-style: none;
+}
+
+.li-diff {
+  background-color: #89ba16;
+}

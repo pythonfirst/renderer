@@ -8,50 +8,53 @@
   <link rel="stylesheet" href="./index.css">
 </head>
 <body>
+  <div id="app-1"></div>
   <div id="app"></div>
   <script type="module">
     import { h } from './h.js';
     import { render } from './render.js';
+    import { vnode_1_3, vnode_1_4 } from './vnode.js'
 
     const container = document.getElementById('app')
 
 
-    const vnode = h('div', {
-      style: {
-        width: '200px',
-        height: '200px',
-        backgroundColor: '#34bf49'
-      },
-      class: 'animation'
+    // const vnode = h('div', {
+    //   style: {
+    //     width: '200px',
+    //     height: '200px',
+    //     backgroundColor: '#34bf49'
+    //   },
+    //   class: 'animation'
       
-    },
-    h('p', {style: { width: '100px', height: '100px', backgroundColor: '#00a98f'}}, 'hello world')
-    )
+    // },
+    // h('p', {style: { width: '100px', height: '100px', backgroundColor: '#00a98f'}}, 'hello world')
+    // )
 
-    const vnode1 = h('input', {
-      type: 'checkbox',
-      checked: true,
-      class: 'cls-a',
-      disabled: false,
-    })
+    // const vnode1 = h('input', {
+    //   type: 'checkbox',
+    //   checked: true,
+    //   class: 'cls-a',
+    //   disabled: false,
+    // })
 
-    const vnode2 = h('div', {
-      style: {
-        width: '200px',
-        height: '200px',
-        backgroundColor: '#6a737b'
-      },
-      class: 'animation'
-    },
-    h('p', {style: { width: '100px', height: '100px', backgroundColor: '#00a98f'}}, 'hello world1')
-    )
+    // const vnode2 = h('div', {
+    //   style: {
+    //     width: '200px',
+    //     height: '200px',
+    //     backgroundColor: '#6a737b'
+    //   },
+    //   class: 'animation'
+    // },
+    // h('p', {style: { width: '100px', height: '100px', backgroundColor: '#00a98f'}}, 'hello world1')
+    // )
 
-
-    render(vnode, container);
+    render(vnode_1_3, container);
     
     setTimeout(() => {
-      render(vnode2, container)
+      render(vnode_1_4, container)
     }, 3000);
+
+    render(vnode_1_3, document.getElementById('app-1'))
 
   </script>
 
