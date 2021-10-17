@@ -10,11 +10,17 @@
 <body>
   <div id="app-1"></div>
   <div id="app"></div>
+  <!-- old DOM -->
+  <ul>
+    <li key="a">a</li>
+    <li key="b">b</li>
+    <li key="c" style="color: red">c</li>
+  </ul>
   <script type="module">
     import { h } from './h.js';
     import { render } from './render.js';
     import { vnode_1_3, vnode_1_4 } from './vnode.js'
-
+    console.log('vnode', vnode_1_4);
     const container = document.getElementById('app')
 
 
@@ -52,11 +58,17 @@
     
     setTimeout(() => {
       render(vnode_1_4, container)
-    }, 3000);
+    }, 5000);
 
-    render(vnode_1_3, document.getElementById('app-1'))
+    // render(vnode_1_3, document.getElementById('app-1'))
 
   </script>
 
 </body>
 </html>
+<!-- new DOM -->
+<ul>
+  <li key="a">a</li>
+  <li key="b">d</li>
+  <li key="c">c</li>
+</ul>

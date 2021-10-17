@@ -1,4 +1,5 @@
 import { h } from './h.js';
+import { render } from './render.js';
 
 // [0,1,2,3]
 // [3,0,1,2]
@@ -264,7 +265,107 @@ const list10 = [
   },
 ]
 
+const list11 = [
+  {
+    value: 'a',
+    key: 'a',
+  },
+  {
+    value: 'b',
+    key: 'b',
+  },
+  {
+    value: 'c',
+    key: 'c',
+  },
+  {
+    value: 'd',
+    key: 'd',
+  },
+  {
+    value: 'e',
+    key: 'e',
+  },
+  {
+    value: 'f',
+    key: 'f',
+  },
+  {
+    value: 'g',
+    key: 'g',
+  },
+  
+]
 
+const list12 = [
+  {
+    value: 'a',
+    key: 'a',
+  },
+  {
+    value: 'b',
+    key: 'b',
+  },
+  {
+    value: 'e',
+    key: 'e',
+  },
+  {
+    value: 'c',
+    key: 'c',
+  },
+  {
+    value: 'd',
+    key: 'd',
+  },
+  {
+    value: 'h',
+    key: 'h',
+  },
+ 
+  {
+    value: 'f',
+    key: 'f',
+  },
+  {
+    value: 'g',
+    key: 'g',
+  },
+]
+
+// [a, b, c] [a d c]
+const list13 = [
+  {
+    value: 'a',
+    key: 'a',
+  },
+  {
+    value: 'b',
+    key: 'b',
+  },
+  {
+    value: 'c',
+    key: 'c',
+  },
+]
+const list14 = [
+  {
+    value: 'a',
+    key: 'a',
+  },
+  {
+    value: 'b',
+    key: 'b',
+  },
+  {
+    value: 'e',
+    key: 'e',
+  },
+  {
+    value: 'c',
+    key: 'c',
+  },
+]
 
 
 export const vnode_1_1 = h(
@@ -289,7 +390,7 @@ export const vnode_1_2 = h(
 export const vnode_1_3 = h(
   'ul',
   null,
-  list9.map(item => {
+  list11.map(item => {
     return h('li', { key: item.key}, item.value);
   })
 )
@@ -297,11 +398,7 @@ export const vnode_1_3 = h(
 export const vnode_1_4 = h(
   'ul',
   null,
-  list10.map( item => {
+  list12.map( item => {
     return h('li', {key: item.key}, item.value);
   })
 )
-
-
-
-
